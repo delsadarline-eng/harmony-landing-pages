@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Injury Recovery | Harmony Injury & Wellness – Tampa, FL</title>
+<meta name="description" content="Auto accidents, slip & fall injuries, and pain recovery in Tampa, FL. Dr. Palmer, DC at Harmony Injury & Wellness. Call (813) 964-6688.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2b5e;
+    --navy-dark: #0f1a3d;
+    --red: #c0392b;
+    --red-light: #e74c3c;
+    --cream: #f8f6f1;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--navy-dark);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 2px solid rgba(192,57,43,0.15);
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+    animation: pulse 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .logo-area {
+    margin-bottom: 2.5rem;
+  }
+
+  .tree-icon {
+    width: 80px; height: 80px;
+    margin: 0 auto 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .tree-icon svg { width: 100%; height: 100%; }
+
+  .brand-name {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 span {
+    color: var(--red-light);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid var(--red);
+  }
+
+  .btn-primary:hover {
+    background: var(--red-light);
+    border-color: var(--red-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(192,57,43,0.4);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    transform: translateY(-2px);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+    z-index: 2;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* URGENCY BAR */
+  .urgency {
+    background: var(--red);
+    padding: 1rem 2rem;
+    text-align: center;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .urgency a { color: white; text-decoration: underline; }
+
+  /* SECTION BASE */
+  section { padding: 5rem 2rem; }
+
+  .container { max-width: 1000px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy-dark);
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-body {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.8;
+    max-width: 680px;
+  }
+
+  /* ABOUT STRIP */
+  .about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  .about-visual {
+    background: var(--navy-dark);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-visual::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(192,57,43,0.15) 0%, transparent 60%);
+  }
+
+  .about-visual svg {
+    width: 120px; height: 120px;
+    position: relative; z-index: 1;
+    opacity: 0.9;
+  }
+
+  .about-visual p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    position: relative; z-index: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* SERVICES */
+  .services { background: var(--cream); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    border-top: 4px solid var(--navy);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+  }
+
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    background: var(--navy-dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.3rem;
+  }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
+
+  /* WHY */
+  .why { background: var(--navy-dark); color: white; }
+
+  .why .section-title { color: white; }
+  .why .section-label { color: var(--red-light); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .why-item { text-align: center; }
+
+  .why-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--red-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .why-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .why-item p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--cream);
+    text-align: center;
+  }
+
+  .cta-box {
+    background: white;
+    border-radius: 12px;
+    padding: 4rem 3rem;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-box .section-title { margin-bottom: 1rem; }
+
+  .cta-box p {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .phone-link {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .phone-link:hover { color: var(--red); }
+
+  .hours-note {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.5);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  footer strong { color: white; }
+
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15,26,61,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .nav-phone {
+    color: var(--red-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-inner { padding-top: 5rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#" class="nav-brand">Harmony Injury & Wellness</a>
+  <a href="tel:8139646868" class="nav-phone">(813) 964-6688</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="logo-area">
+      <div class="tree-icon">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="50" y1="85" x2="50" y2="45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="50" y1="65" x2="35" y2="50" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="50" y1="58" x2="65" y2="43" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="50" cy="32" r="18" fill="rgba(192,57,43,0.3)" stroke="rgba(192,57,43,0.6)" stroke-width="1"/>
+          <circle cx="33" cy="42" r="12" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <circle cx="67" cy="38" r="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="brand-name">Harmony Injury & Wellness · Tampa, FL</div>
+    </div>
+
+    <h1>
+      Pain Shouldn't
+      <span>Run Your Life.</span>
+    </h1>
+    <p class="hero-sub">
+      Whether you've been in an auto accident, suffered a slip and fall, or are living with chronic pain — Dr. Palmer and the Harmony team are here to help you heal, recover, and move forward.
+    </p>
+    <div class="hero-cta">
+      <a href="BOOKING_LINK_HERE" class="btn-primary">Book Your Appointment</a>
+      <a href="tel:8139646868" class="btn-secondary">Call (813) 964-6688</a>
+    </div>
+  </div>
+  <div class="scroll-hint">↓ Learn More</div>
+</section>
+
+<div class="urgency">
+  ⚡ Virtual Appointments Available — See Dr. Palmer From the Comfort of Home &nbsp;|&nbsp; <a href="tel:8139646868">Call Now: (813) 964-6688</a>
+</div>
+
+<section class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">About Dr. Palmer</div>
+        <h2 class="section-title">Chiropractic Care Built Around Your Recovery</h2>
+        <p class="section-body">
+          At Harmony Injury & Wellness, Dr. Palmer, DC takes a whole-body approach to injury recovery. We don't just treat symptoms — we identify the root cause of your pain and build a personalized treatment plan designed to get you back to full function, faster.
+          <br><br>
+          Located in Tampa at 1037 W. Busch Blvd., our clinic serves patients recovering from accidents, workplace injuries, and everyday pain with compassionate, expert chiropractic care.
+        </p>
+      </div>
+      <div class="about-visual">
+        <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="50" y1="110" x2="50" y2="55" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <line x1="50" y1="80" x2="30" y2="60" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="50" y1="72" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="50" y1="65" x2="25" y2="45" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="50" y1="60" x2="75" y2="38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="50" cy="35" r="22" fill="rgba(192,57,43,0.25)" stroke="rgba(192,57,43,0.5)" stroke-width="1.5"/>
+          <circle cx="28" cy="45" r="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <circle cx="72" cy="40" r="16" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <circle cx="50" cy="15" r="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        </svg>
+        <p>Dr. Palmer, DC · Chiropractic Physician</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <div class="section-label">Injury Services</div>
+    <h2 class="section-title">We Treat What's Holding You Back</h2>
+    <p class="section-body">From the moment of injury through full recovery, our team provides comprehensive care tailored to your situation.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Auto Accident Recovery</h3>
+        <p>Been in a car accident? Don't wait. Whiplash, back injuries, and soft tissue damage often worsen without proper treatment. We help you recover — and we work with your insurance.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚠️</div>
+        <h3>Slip & Fall Injuries</h3>
+        <p>A sudden fall can cause serious spinal and joint damage. Our injury specialists assess the full extent of your injuries and create a recovery plan that gets you back on your feet.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💆</div>
+        <h3>Massage Therapy</h3>
+        <p>Therapeutic massage accelerates healing by reducing inflammation, releasing muscle tension, and improving circulation — the perfect complement to chiropractic adjustments.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💧</div>
+        <h3>Hydrotherapy</h3>
+        <p>Water-based therapy helps reduce pain and stiffness, improve mobility, and support recovery — especially effective for patients with limited range of motion after injury.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🥗</div>
+        <h3>Nutritional Counseling</h3>
+        <p>Healing from the inside out. Proper nutrition supports tissue repair, reduces inflammation, and strengthens the body's natural recovery process.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Virtual Appointments</h3>
+        <p>Can't make it in? We offer virtual consultations for follow-ups, nutrition counseling, and initial assessments so your recovery never has to stop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div class="section-label">Why Harmony</div>
+    <h2 class="section-title">Recovery Is Our Only Priority</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-number">6+</div>
+        <h4>Services Under One Roof</h4>
+        <p>No referral runaround. Everything you need for recovery is here.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-number">2x</div>
+        <h4>Evening Hours Available</h4>
+        <p>Open until 7pm — we work around your schedule, not the other way around.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-number">1:1</div>
+        <h4>Personalized Treatment Plans</h4>
+        <p>Every patient is different. Your plan is built specifically for your body and your goals.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-number">∞</div>
+        <h4>Ongoing Support</h4>
+        <p>We don't disappear after your first visit. We're with you through every step of recovery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="section-label">Ready to Start?</div>
+      <h2 class="section-title">Your Recovery Starts With One Call</h2>
+      <p>Don't let pain become your new normal. Dr. Palmer and the Harmony team are ready to help you heal. Book your appointment online or call us directly — we'll take it from there.</p>
+      <a href="tel:8139646868" class="phone-link">(813) 964-6688</a>
+      <div class="hours-note">Mon & Wed 9am–7pm &nbsp;|&nbsp; Tue & Thu 2pm–7pm &nbsp;|&nbsp; Virtual Available</div>
+      <a href="BOOKING_LINK_HERE" class="btn-primary">Book Online Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Harmony Injury & Wellness</strong> &nbsp;·&nbsp; Dr. Palmer, DC &nbsp;·&nbsp; 1037 W. Busch Blvd., Tampa, FL 33612</p>
+  <p style="margin-top:0.5rem;"><a href="tel:8139646868">(813) 964-6688</a> &nbsp;·&nbsp; <a href="mailto:DrPalmer@harmonyinjuryandwellness.com">DrPalmer@harmonyinjuryandwellness.com</a></p>
+  <p style="margin-top:1rem; font-size:0.75rem;">© 2025 Harmony Injury & Wellness. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
